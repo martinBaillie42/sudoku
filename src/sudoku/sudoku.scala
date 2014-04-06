@@ -20,7 +20,6 @@ object sudoku {
     *
     * @return a BufferedSource object containing the text file selected by the user
     */
-
     def loadFile = {
         val chooser = new JFileChooser()
         val view = chooser.getFileSystemView
