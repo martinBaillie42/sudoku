@@ -20,12 +20,21 @@ object sudoku2 {
 //    println(sudokuGrid foreach (x => println(x(0))))
     val completeSudokuGrid = solveSudoku(sudokuGrid)
 
-    println("HELLO")
 //    completeSudokuGrid foreach (println(_))
 //    println(completeSudokuGrid foreach (x => println(x(0))))
 //      println(completeSudokuGrid(0) foreach (x => println(x)))
 //
 //    println(completeSudokuGrid foreach (x => x foreach (y => println(y)) ))
+    for (y <- 0 until 9) {
+      for (x <- 0 until 9) {
+        if (completeSudokuGrid(x)(y).size == 1) {
+          print(completeSudokuGrid(x)(y)(0) + " ")
+        } else {
+          print("_ ")
+        }
+      }
+      println()
+    }
   }
   
   def solveSudoku(sudokuArray: Array[Array[List[Int]]]) = {
@@ -111,6 +120,7 @@ object sudoku2 {
   def loadFile = {
     val chooser = new JFileChooser()
     val view = chooser.getFileSystemView()
+//    TODO: re-enable file selection
 //    val in = Console.readLine("Place the Sudoku text file in the '" + view.getHomeDirectory + "' directory. \nEnter its filename here (minus the 'txt' suffix): ")
 //    use file.exist to check if it exists
     
