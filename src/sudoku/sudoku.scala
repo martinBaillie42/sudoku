@@ -65,7 +65,7 @@ object sudoku {
         (formattedGrid.toArray grouped 9).toArray
     }
 
-    /** Creates a person with a given name and birthdate
+    /** Solves the Sudoku puzzle.
     *
     * @param sudokuArray an Array containing the unsolved Sudoku puzzle
     * @return an array containing the solved Sudoku puzzle
