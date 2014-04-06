@@ -19,9 +19,12 @@ object sudoku2 {
 //    println(sudokuGrid foreach (x => x foreach (y => println(y)) ))
 //    println(sudokuGrid foreach (x => println(x(0))))
     val completeSudokuGrid = solveSudoku(sudokuGrid)
+
+    println("HELLO")
+//    completeSudokuGrid foreach (println(_))
 //    println(completeSudokuGrid foreach (x => println(x(0))))
 //      println(completeSudokuGrid(0) foreach (x => println(x)))
-    
+//
 //    println(completeSudokuGrid foreach (x => x foreach (y => println(y)) ))
   }
   
@@ -55,34 +58,34 @@ object sudoku2 {
       true
     }
 
-//    solveVertical(0)
-//    solveHorizontal(0)
+    solveVertical(0)
+    solveHorizontal(0)
     
-    def pos (y: Int, x: Int) = {
-      sudokuArray(y)(x)
-    }
+//    def pos (y: Int, x: Int) = {
+//      sudokuArray(y)(x)
+//    }
+//
+//    def horizontalAnswers (y: Int) = {
+//      (for (x <- (0 to 8) if pos(y,x).length == 1) yield pos(y,x)(0)).toArray
+//    }
+//
+//    def verticalAnswers (x: Int) = {
+//      (for (y <- (0 to 8) if pos(y,x).length == 1) yield pos(y,x)(0)).toArray
+//    }
     
-    def horizontalAnswers (y: Int) = {
-      (for (x <- (0 to 8) if pos(y,x).length == 1) yield pos(y,x)(0)).toArray
-    }
+//    def calcH(y: Int) = {
+//      sudokuArray(y).indexWhere()
+//      sudokuArray(y)
+//    }
     
-    def verticalAnswers (x: Int) = {
-      (for (y <- (0 to 8) if pos(y,x).length == 1) yield pos(y,x)(0)).toArray
-    }
-    
-    def calcH(y: Int) = {
-      sudokuArray(y).indexWhere()
-      sudokuArray(y)
-    }
-    
-    def diagonal(yx: Int): Array[Array[List[Int]]] = {
-      if (yx < sudokuArray.length) {
-        sudokuArray(yx) = sudokuArray(yx) foreach (l => l filter (i => case ) )
-        diagonal(yx + 1)
-      }
-      sudokuArray
-      
-    }
+//    def diagonal(yx: Int): Array[Array[List[Int]]] = {
+//      if (yx < sudokuArray.length) {
+//        sudokuArray(yx) = sudokuArray(yx) foreach (l => l filter (i => case ) )
+//        diagonal(yx + 1)
+//      }
+//      sudokuArray
+//
+//    }
     
     def test(x: Array[List[Int]]) = {
       println(x)
@@ -90,8 +93,9 @@ object sudoku2 {
     }
     
 //    println(sudokuArray.indexWhere { (x) => test(x) })
-    println(sudokuArray.view.zipWithIndex foreach {case (value, index) => })
-    diagonal(0)
+//    println(sudokuArray.view.zipWithIndex foreach {case (value, index) => })
+//    diagonal(0)
+    sudokuArray
   }
   
   def genSudokuGrid (list: List[Char]) = {
